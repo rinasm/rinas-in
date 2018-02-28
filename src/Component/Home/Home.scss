@@ -1,0 +1,106 @@
+@import "../../scssMixins/scss.mixin";
+
+.Home ,
+.Home *{
+  @include no-select();
+}
+.Home {
+  @extend box;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 1557px;
+  height: 785px;
+  background: #000;
+  .h-container{
+    @extend box;
+    position: absolute;
+    perspective: 800px;
+    left: -20%;
+    top:0;
+    width: 120%;
+    height: 100%;
+    .hc-bg1{
+      @extend box;
+      position: relative;
+      width: 87%;
+      height: 130%;
+      top:-10%;
+      left: 16%;
+      @include transition(0.5s cubic-bezier(0.11, 0.93, 1, 1));
+      img{
+        width: 100%;
+      }
+    }
+    .hc-floor,
+    .hc-grill2,
+    .hc-man,
+    .hc-wall,
+    .hc-grill1{
+      float: left;
+      position: absolute;
+      transform-style: preserve-3d;
+      @include transition(0.5s cubic-bezier(0.11, 0.93, 1, 1));
+    }
+    .hc-floor,
+    .hc-wall,
+    .hc-grill1{
+      width: 50%;
+      height: 220%;
+      top: -20%;
+      left: 25%;
+      transform: rotateX( 100deg );
+      background: #000;
+      border: 2px solid #000;
+    }
+    .hc-wall,
+    .hc-grill1{
+      width: 7%;
+      left: 75%;
+      transform: rotateX( 100deg ) rotateY(-90deg);
+      transform-origin: left;
+      background: #000;
+    }
+    .hc-grill2{
+      background: red;
+      //transform-origin: left-top;
+      height: 8.3%;
+      left: 37.4%;
+      width: 24.3%;
+      top:70.1%;
+      border-right: 4px solid #070707;
+      border-top: 4px solid #070707;
+      background: repeating-linear-gradient(
+                      90deg,
+                      rgba(0,0,0,0),
+                      rgba(0,0,0,0) 8px,
+                      #000000 9px,
+                      #0d0c0d 10px
+      );
+    }
+    .hc-grill1 {
+      border-right: 10px solid #070707;
+      border-bottom: 10px solid #070707;
+      background: repeating-linear-gradient(
+                      0deg,
+                      rgba(0,0,0,0),
+                      rgba(0,0,0,0) 30px,
+                      #000000 10px,
+                      #0d0c0d 40px
+      );
+    }
+    .hc-man{
+      z-index: 10;
+      top:50%;
+      width: 15%;
+      left: 50%;
+      img{
+        width: 100%;
+      }
+    }
+    .hc-wall{
+      left: 25%;
+      width: 40%;
+    }
+  }
+}

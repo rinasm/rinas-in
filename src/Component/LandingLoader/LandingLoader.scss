@@ -1,0 +1,19 @@
+@import "../../scssMixins/scss.mixin";
+
+.LandingLoader.inactive{
+  pointer-events: none;
+}
+.LandingLoader.active{
+  opacity: 1;
+}
+.LandingLoader {
+  @extend box;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: #333;
+  opacity:0;
+  @include transition(0.74s);
+}
